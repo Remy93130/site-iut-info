@@ -24,14 +24,14 @@
         "symfony/validator": "*",
         "symfony/web-link": "*",
         "symfony/yaml": "*",
-        "wp-coding-standards/wpcs": "^1.1"
+        "wp-coding-standards/wpcs": "^1.1",
         "symfony/web-server-bundle": "*"
     },
     "require-dev": {
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "*",
-        "symfony/test-pack": "*",
+        "symfony/test-pack": "*"
     },
     "config": {
         "preferred-install": {
@@ -60,8 +60,7 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "requirements-checker": "script"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
