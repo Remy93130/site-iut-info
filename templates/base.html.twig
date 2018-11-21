@@ -2,11 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Iut Informatique{% endblock %}</title>
+        {% block stylesheets %}
+        	{# Ajouter tout les fichiers css communs aux page ici #}
+        {% endblock %}
     </head>
     <body>
+    	<h1>Ce titre est dans le template de base il sera répété dans tout les fichiers (coucou la navbar)</h1>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        	{# Ajouter tout les fichiers js communs aux page ici #}
+        {% endblock %}
     </body>
 </html>
