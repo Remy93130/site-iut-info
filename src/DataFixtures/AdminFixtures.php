@@ -9,26 +9,23 @@ use App\Entity\Admin;
 
 class AdminFixtures extends Fixture
 {
-	private $encoder;
+    private $encoder;
 
-	public function __construct(UserPasswordEncoderInterface $encoder)
-	{
-		$this->encoder = $encoder;
-	}
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this->encoder = $encoder;
+    }
 
     public function load(ObjectManager $manager)
     {
-        // $product = new Product();
-        // $manager->persist($product);
+        $admin = new Admin();
+        $admin->setUsername('root')
+            ->setPassword($this->encoder->encodePassword(
+                $admin,
+                'toor'
+            ));
 
-		$admin = new Admin();
-		$admin->setUsername('root')
-			->setPassword($this->encoder->encodePassword(
-				$admin,
-				'toor'
-			));        
-
-		$manager->persist($admin);
+        $manager->persist($admin);
         $manager->flush();
     }
 }
