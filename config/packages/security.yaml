@@ -1,11 +1,22 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        App\Entity\Admin:
+            algorithm: bcrypt
     providers:
         in_memory: { memory: ~ }
+        in_database:
+            entity:
+                class: App\Entity\Admin
+                property: username
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+        admin:
+            pattern: ^/admin/*
+            http_basic: ~
+            provider: in_database
         main:
             anonymous: true
 

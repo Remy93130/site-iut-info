@@ -8,13 +8,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Common\Persistence\ObjectManager;
 
 
-class BlogController extends AbstractController
+class AdminController extends AbstractController
 {
     /**
-     * @Route("/offres", name="offers")
+     * @Route("/admin/", name="admin")
      */
     public function index(ObjectManager $manager): Response
     {
-        return $this->render('blog/index.html.twig');
+        return $this->render('admin/index.html.twig');
     }
 }

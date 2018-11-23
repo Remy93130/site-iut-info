@@ -33,7 +33,7 @@ class Offer
     private $type;
 
     /**
-     * @ORM\Column(type="string" length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $duration;
 
