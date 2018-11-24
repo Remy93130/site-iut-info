@@ -19,3 +19,6 @@
 /.phpcs-cache
 /phpcs.xml
 ###< squizlabs/php_codesniffer ###
+.buildpath
+.project
+.settings/org.eclipse.wst.validation.prefs

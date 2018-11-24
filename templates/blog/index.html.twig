@@ -3,4 +3,24 @@
 {% block body %}
 <div class="example-wrapper">
     <h2>Ceci est la page des offres de stages/alternances ✅</h2>
+    {% for stage in stages %}
+        <p>
+            {{ stage.title }} <br>
+            {{ stage.type.name }} <br>
+            {{ stage.organisation }} <br>
+            {{ stage.duration }} <br>
+            {{ stage.location }} <br>
+            {{ stage.description }} <br><br><br>
+        </p>
+    {% endfor %}
+    {% for alternance in alternances %}
+        <p>
+            {{ alternance.title }} <br>
+            {{ alternance.type.name }} <br>
+            {{ alternance.organisation }} <br>
+            {{ alternance.duration }} <br>
+            {{ alternance.location }} <br>
+            {{ alternance.description }} <br><br><br>
+        </p>
+    {% endfor %}
 {% endblock %}

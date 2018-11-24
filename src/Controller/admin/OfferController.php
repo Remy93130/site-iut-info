@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\admin;
 
 use App\Entity\Offer;
 use App\Form\OfferType;
@@ -20,7 +20,7 @@ class OfferController extends AbstractController
      */
     public function index(OfferRepository $offerRepository): Response
     {
-        return $this->render('offer/index.html.twig', ['offers' => $offerRepository->findAll()]);
+        return $this->render('admin/offer/index.html.twig', ['offers' => $offerRepository->findAll()]);
     }
 
     /**
@@ -40,7 +40,7 @@ class OfferController extends AbstractController
             return $this->redirectToRoute('offer_index');
         }
 
-        return $this->render('offer/new.html.twig', [
+        return $this->render('admin/offer/new.html.twig', [
             'offer' => $offer,
             'form' => $form->createView(),
         ]);
@@ -51,7 +51,7 @@ class OfferController extends AbstractController
      */
     public function show(Offer $offer): Response
     {
-        return $this->render('offer/show.html.twig', ['offer' => $offer]);
+        return $this->render('admin/offer/show.html.twig', ['offer' => $offer]);
     }
 
     /**
@@ -68,7 +68,7 @@ class OfferController extends AbstractController
             return $this->redirectToRoute('offer_edit', ['id' => $offer->getId()]);
         }
 
-        return $this->render('offer/edit.html.twig', [
+        return $this->render('admin/offer/edit.html.twig', [
             'offer' => $offer,
             'form' => $form->createView(),
         ]);
