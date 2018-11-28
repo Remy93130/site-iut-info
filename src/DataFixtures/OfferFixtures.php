@@ -25,7 +25,7 @@ class OfferFixtures extends Fixture
         $manager->flush();
         
         $typesManager = $manager->getRepository(Type::class);
-        $types = $typesManager->findAll();        
+        $types = $typesManager->findAll();
 
         for ($i = 0; $i < 20; $i++) {
             $offer = new Offer();

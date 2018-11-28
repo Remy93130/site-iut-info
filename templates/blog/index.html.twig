@@ -10,7 +10,7 @@
             {{ stage.organisation }} <br>
             {{ stage.duration }} <br>
             {{ stage.location }} <br>
-            {{ stage.description }} <br><br><br>
+            <a href="{{ path('specific_offer', {'idOffer': stage.id}) }}">lien</a> <br><br><br>
         </p>
     {% endfor %}
     {% for alternance in alternances %}
@@ -20,7 +20,7 @@
             {{ alternance.organisation }} <br>
             {{ alternance.duration }} <br>
             {{ alternance.location }} <br>
-            {{ alternance.description }} <br><br><br>
+            <a href="{{ path('specific_offer', {'idOffer': alternance.id}) }}">lien</a> <br><br><br>
         </p>
     {% endfor %}
 {% endblock %}

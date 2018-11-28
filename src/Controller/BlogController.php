@@ -24,4 +24,21 @@ class BlogController extends AbstractController
             "alternances" => $alternances
         ]);
     }
+
+    /**
+     * @Route(
+     *     "/offres/{idOffer}",
+     *     name="specific_offer",
+     *     requirements={"idOffer"="\d+"}
+     * )
+     */
+    public function seeOffer(int $idOffer, ObjectManager $manager) : Response
+    {
+        $data = $manager->getRepository(Offer::class);
+        $offer = $data->find($idOffer);
+
+        return $this->render('blog/offer.html.twig', [
+            "offer" => $offer
+        ]);
+    }
 }
