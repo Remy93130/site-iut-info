@@ -5,6 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Common\Persistence\ObjectManager;
+use App\Entity\IutLocation;
 
 class BaseController extends AbstractController
 {
@@ -21,10 +23,17 @@ class BaseController extends AbstractController
      */
     public function mapIUT(): Response
     {
-        /**
-         * @todo Connect database and get positions
-         */
         return $this->render('base/map.html.twig');
+    }
+    
+    /**
+     * @Route("/api/getMap", name="mapLocation")
+     */
+    public function getMapFormation(ObjectManager $manager): Response
+    {
+        $data = $manager->getRepository(IutLocation::class);
+        $locations = $data->findAll();
+        return $this->json($locations);
     }
 
     /**
