@@ -17,13 +17,17 @@ function getLocations(map) {
 }
 
 function putMarker(map, iuts) {
+    var markers = [];
     for (var i = 0 in iuts) {
         var lon = iuts[i]['lon'];
         var lat = iuts[i]['lat'];
         var content = iuts[i]['content'];
         var mark = L.marker([lon, lat]).addTo(map);
+        markers.push(mark);
         mark.bindPopup(content);
     }
+    var group = new L.featureGroup(markers);
+    map.fitBounds(group.getBounds());
 }
 
 window.onload = function(){
