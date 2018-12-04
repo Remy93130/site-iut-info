@@ -6,9 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Common\Persistence\ObjectManager;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use App\Entity\Offer;
 
-class BlogController extends AbstractController
+class OfferBlogController extends AbstractController
 {
     /**
      * @Route("/offres", name="offers")
@@ -19,25 +20,19 @@ class BlogController extends AbstractController
         $stages = $data->findAllByTypeName("Stage");
         $alternances = $data->findAllByTypeName("Alternance");
         
-        return $this->render('blog/index.html.twig', [
+        return $this->render('offer_blog/index.html.twig', [
             "stages" => $stages,
             "alternances" => $alternances
         ]);
     }
 
     /**
-     * @Route(
-     *     "/offres/{idOffer}",
-     *     name="specific_offer",
-     *     requirements={"idOffer"="\d+"}
-     * )
+     * @Route("/offres/{idOffer}", name="specific_offer", methods="GET")
+     * @ParamConverter("offer", options={"mapping": {"idOffer" : "id"}})
      */
-    public function seeOffer(int $idOffer, ObjectManager $manager) : Response
+    public function seeOffer(Offer $offer, ObjectManager $manager) : Response
     {
-        $data = $manager->getRepository(Offer::class);
-        $offer = $data->find($idOffer);
-
-        return $this->render('blog/offer.html.twig', [
+        return $this->render('offer_blog/offer.html.twig', [
             "offer" => $offer
         ]);
     }

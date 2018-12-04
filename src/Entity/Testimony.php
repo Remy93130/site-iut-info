@@ -27,11 +27,6 @@ class Testimony
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $picture;
-
-    /**
      * @ORM\Column(type="smallint")
      */
     private $age;
@@ -50,6 +45,11 @@ class Testimony
      * @ORM\Column(type="text")
      */
     private $content;
+
+    /**
+     * @ORM\Column(type="blob", nullable=true)
+     */
+    private $picture;
 
     public function getId(): ?int
     {
@@ -76,18 +76,6 @@ class Testimony
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getPicture(): ?string
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(?string $picture): self
-    {
-        $this->picture = $picture;
 
         return $this;
     }
@@ -136,6 +124,18 @@ class Testimony
     public function setContent(string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    public function setPicture($picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
