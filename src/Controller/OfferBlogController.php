@@ -30,7 +30,7 @@ class OfferBlogController extends AbstractController
      * @Route("/offres/{idOffer}", name="specific_offer", methods="GET")
      * @ParamConverter("offer", options={"mapping": {"idOffer" : "id"}})
      */
-    public function seeOffer(Offer $offer, ObjectManager $manager) : Response
+    public function seeOffer(Offer $offer, ObjectManager $manager): Response
     {
         return $this->render('offer_blog/offer.html.twig', [
             "offer" => $offer
