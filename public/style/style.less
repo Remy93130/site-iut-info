@@ -1,0 +1,151 @@
+@import "source.less";
+@import "navbar.less";
+@import "index.less";
+@import "emplois.less";
+
+@navbarheight:100px;
+@navbarresponsiveheight:60px;
+@logowidth:100px;
+
+@headfontsize:20px;
+
+@navbarcolor:white;
+
+@bootblue:#007bff;
+@bootbluedark:#003edb;
+
+@navbarzindex:5;
+
+@navbarresponsive:780px;
+
+* { font-family:"regular"; }
+
+body{ 
+	overflow-x: hidden;
+	background-color:whitesmoke;
+}
+
+#BODY{
+	margin-top:calc(100% - navbarheight);
+	margin-bottom: 100px;
+	background-color:whitesmoke;
+}
+
+.bloc{
+	width:100%;
+	margin-top:30px;
+	background-color:white;
+}
+span.bold{
+	font-family: "bold";
+}
+
+.button-shape{
+	.button-shadow;
+	background-color:@bootblue;
+	padding:10px;
+	color:white;
+	.text-shadow;
+	will-change:background-color;
+	.transition(0.2s, all);
+	&:hover{
+		background-color:@bootbluedark;
+	}
+}
+.button-shadow{
+	.shadow(0, 2px, 6px, 2px, rgba(0, 0, 0, 0.2));
+
+	&:hover{
+		.shadow(0, 2px, 6px, 1px, rgba(0, 0, 0, 0.4));
+	}
+}
+
+.pagehead{
+	padding:20px;
+	@namewidth:400px;
+	.name{
+		float:left;
+		width:@namewidth;
+		font-family: "bold";
+		font-size:@headfontsize + 10px;
+	}
+	.url{
+		padding-top:9px;
+		float:left;
+		width:calc(100% - @namewidth);
+		a{
+			display:inline-block;
+			height:25px;
+			float:left;
+			color:black;
+			will-change:font-family;
+
+			&:hover{
+				font-style:bold;
+
+				&::after{
+					content:"";
+					display:block;
+					width:calc(100% - 34px);
+					height:2px;
+					background-color:black;
+					float:right;
+					animation:scaleX 0.15s;
+				}
+
+				&::before{
+					font-family: "regular";
+				}
+			}
+
+			&::before{
+				content:"->";
+				display: inline-block;
+				margin-left:10px;
+				margin-right:10px;
+			}
+
+			&:nth-child(1){
+				&::before{
+					content:"";
+					margin:0;
+				}
+				&::after{
+					width:100%;
+				}
+			}
+		}
+	}
+	.clear-float;
+}
+
+
+.clear-float{
+	&::after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@media screen and (max-width:@navbarresponsive) {
+	.pagehead{
+		.name{
+			width:100%;
+		}
+		.url{
+			width:100%;
+		}
+	}
+}
+
+@keyframes scaleX {
+	from{
+		transform: scaleX(0);
+		transform-origin: left;
+	}
+	to{
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}

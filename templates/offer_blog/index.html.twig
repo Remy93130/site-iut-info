@@ -1,26 +1,90 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h2>Ceci est la page des offres de stages/alternances ✅</h2>
-    {% for stage in stages %}
-        <p>
-            {{ stage.title }} <br>
-            {{ stage.type.name }} <br>
-            {{ stage.organisation }} <br>
-            {{ stage.duration }} <br>
-            {{ stage.location }} <br>
-            <a href="{{ path('specific_offer', {'idOffer': stage.id}) }}">lien</a> <br><br><br>
-        </p>
-    {% endfor %}
-    {% for alternance in alternances %}
-        <p>
-            {{ alternance.title }} <br>
-            {{ alternance.type.name }} <br>
-            {{ alternance.organisation }} <br>
-            {{ alternance.duration }} <br>
-            {{ alternance.location }} <br>
-            <a href="{{ path('specific_offer', {'idOffer': alternance.id}) }}">lien</a> <br><br><br>
-        </p>
-    {% endfor %}
+
+<div class=bloc>    
+<div class=pagehead>
+    <div class=name>Page 1 wallah</div>
+    {# <div class="url">
+        <a href="">Accueil</a>
+        <a href="">BlaBla</a>
+        <a href="">PTDR</a>
+    </div> #}
+</div>
+</div>
+
+<div class=bloc>
+<div class=searchbar>
+    <span class=input><span class=glass></span><input type="text" placeholder="Recherche"></span>
+    <label class=checkbox><input type="checkbox" name="zurgh"><span class=checkmark></span>Critère 1</label>
+    <label class=checkbox><input type="checkbox" name="zurgh"><span class=checkmark></span>Critère 2</label>
+    <select>Type d'entreprise
+        <option id="">Type 1</option>
+        <option id="">Type 2</option>
+        <option id="">Type 3</option>
+        <option id="">Type 4</option>
+    </select>
+</div>
+</div>
+
+<div class=bloc>
+<div class=emplois>
+{% for stage in stages %}
+    <a href="{{ path("specific_offer", {'idOffer': stage.id}) }}">
+    <div class=emploi>
+        <div class=head>
+            <p class=nom>{{ stage.organisation }}</p>
+            <p class=lib>{{ stage.title }}</p>
+        </div>
+        <div class=body>
+            <p class=date>{{ stage.duration }}</p>
+            <p class=adresse>{{ stage.location }}</p>
+        </div>
+    </div>
+    </a>    
+{% endfor %}
+{# <a href="">
+<div class=emploi>
+    <div class=head>
+        <p class=nom>Entreprise factice</p>
+        <p class=lib>Stage de deuxième année rémunéré BEAUCOUP</p>
+    </div>
+    <div class=body>
+        <p class=date>25 Janvier 2018</p>
+        <p class=adresse>Dans ton cul</p>
+    </div>
+</div>
+</a>
+
+<a href="">
+<div class=emploi>
+    <div class=head>
+        <p class=nom>Entreprise factice</p>
+        <p class=lib>Stage de deuxième année rémunéré BEAUCOUP</p>
+    </div>
+    <div class=body>
+        <p class=date>25 Janvier 2018</p>
+        <p class=adresse>Dans ton cul</p>
+    </div>
+</div>
+</a>
+
+<a href="">
+<div class=emploi>
+    <div class=head>
+        <p class=nom>Entreprise factice</p>
+        <p class=lib>Stage de deuxième année rémunéré BEAUCOUP</p>
+    </div>
+    <div class=body>
+        <p class=date>25 Janvier 2018</p>
+        <p class=adresse>Dans ton cul</p>
+    </div>
+</div>
+</a>
+
+</div> #}
+</div>
+
+</div>
+
 {% endblock %}

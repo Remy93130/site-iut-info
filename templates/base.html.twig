@@ -4,15 +4,45 @@
         <meta charset="UTF-8">
         <title>{% block title %}Iut Informatique{% endblock %}</title>
         {% block stylesheets %}
-        	{# Ajouter tout les fichiers css communs aux page ici #}
+        	<link rel="stylesheet" type="text/css" href="{{ asset("style/style.css") }}">
         {% endblock %}
     </head>
     <body>
-    	<h1>Ce titre est dans le template de base il sera répété dans tout les fichiers (coucou la navbar)</h1>
+    	<div id="NAVBAR">
+            <a href="{{ path("index") }}">
+                <div class=logo>
+                    Logo
+                </div>
+            </a>
+            <div class="opennavbar" onclick="openNavbar(this, 'NAVBAR')">
+                <div class=hamburger></div>
+            </div>
+            <div class=right>
+                <a href="">
+                    <div class=part><p>Formation</p></div>
+                </a>
+                <a href="{{ path('map') }}">
+                    <div class=part><p>Carte des IUTs</p></div>
+                </a>
+                <a href="{{ path("post_formation") }}">
+                    <div class=part><p>Après l'IUT ?</p></div>
+                </a>
+                <a href="">
+                    <div class=part><p>Revue de presse</p></div>
+                </a>
+                <a href="{{ path("usefull_link") }}">
+                    <div class=part><p>Liens utiles</p></div>
+                </a>
+                <a href="{{ path("partnership") }}">
+                    <div class="part"><p>Partenariats</p></div>
+                </a>
+            </div>
+        </div>
         {% block body %}{% endblock %}
         {% block javascripts %}
         	{# Ajouter tout les fichiers js communs aux page ici #}
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script type="text/javascript" src="{{ asset("js/script.js") }}"></script>
         {% endblock %}
     </body>
 </html>

@@ -1,0 +1,152 @@
+@import "style.less";
+@import "framework/source.less";
+
+.searchbar{
+	width:100%;
+	padding:15px;
+
+	.input{
+		margin-left:20px;
+
+		.glass{
+			height:13px;
+			width:13px;
+			display:inline-block;
+			border-radius:20px;
+			border:2px solid grey;
+			position:relative;
+			left:20px;
+			top:0px;
+			&::after{
+				content:"";
+				display:block;
+				width:2px;
+				height:7px;
+				background-color:grey;
+				transform:rotate(-45deg);
+				position:relative;
+				top:7px;
+				left:10px;
+			}
+		}
+		input{
+			padding-left:30px;
+		}
+		
+	}
+	.checkbox{
+		cursor:pointer;
+		display:inline-block;
+		input{
+			opacity:0;
+			width:0;
+			height:0;
+			float:left;
+		}
+		&:hover{
+			.checkmark{
+				background-color:silver;
+			}
+		}
+		.checkmark{
+			width:17px;
+			height:17px;
+			border-radius:2px;
+			display:inline-block;
+			background-color:lightgrey;
+			position:relative;
+			top:2px;
+			margin-right:10px;
+		}
+
+		input:checked ~ .checkmark{
+			background-color:@bootblue;
+			&::before{
+				content:"";
+				display:block;
+				width:8px;
+				height:4px;
+				border-left:2px solid white;
+				border-bottom:2px solid white;
+				transform:rotate(-45deg);
+				position:relative;
+				top:4px;
+				left:3px;
+				animation:check 0.15s;
+			}
+		}
+	}
+	select{
+		padding:6px;
+		margin-left:20px;
+	}
+}
+
+.emplois{
+	width:100%;
+	padding-top:30px;
+	padding-bottom:33px;
+	p{color:black;}
+	.emploi{
+		cursor: pointer;
+		margin:20px 0 20px 20px;
+		border-left:3px solid @bootblue;
+		border-radius:3px;
+		.shadow(0, 1px, 3px, 0, rgba(0, 0, 0, 0.4));
+		will-change:border;
+		.transition(0.1s, border);
+
+		&:hover{
+			border-left-width:5px;
+		}
+
+		.head, .body{
+			float:left;
+			width:100%;
+			.clear-float;
+
+			.nom, .date{
+				padding-left:20px;
+				display:inline-block;
+				width:300px;
+				float:left;
+			}
+			.lib, .adresse{
+				float:left;
+				display:inline-block;
+				width:calc(100% - 300px);
+			}
+		}
+		.body{
+			.date{
+				&::before{
+					content:"Date : ";
+				}
+			}
+			.adresse{
+				&::before{
+					content: "Adresse : ";
+				}
+			}
+		}
+		.head{
+			.lib{
+				padding-left:20px;
+			}
+			.nom{
+				border-right:2px solid black;
+				font-family: "bold";
+			}
+		}
+		.clear-float;
+	}
+}
+
+@keyframes check{
+	from{
+		transform: scale(0) rotate(120deg);
+	}
+	to{
+		transform: scale(1) rotate(-45deg);
+	}
+}
