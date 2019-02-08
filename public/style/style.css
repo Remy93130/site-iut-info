@@ -399,6 +399,26 @@ select:hover {
   font-style: italic;
   text-align: right;
 }
+.temoignage .button {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  -moz-box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.2);
+}
+.temoignage .button:hover {
+  background: #003edb;
+}
+.temoignage .button:hover {
+  -moz-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.4);
+}
 .temoignage::after {
   content: "";
   display: table;
