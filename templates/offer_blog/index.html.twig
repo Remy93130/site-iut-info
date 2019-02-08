@@ -15,24 +15,24 @@
 
 <div class=bloc>
 <div class=searchbar>
-    <span class=input><span class=glass></span><input type="text" placeholder="Recherche"></span>
-    <label class=checkbox><input type="checkbox"><span class=checkmark></span>Stage</label>
-    <label class=checkbox><input type="checkbox"><span class=checkmark></span>Alternance</label>
+    <span class=input><span class=glass></span><input type="text" placeholder="Recherche" id="input_search"></span>
+    <label class=checkbox><input type="checkbox" id="stage"><span class=checkmark></span>Stage</label>
+    <label class=checkbox><input type="checkbox" id="alternance"><span class=checkmark></span>Alternance</label>
 </div>
 </div>
 
 <div class=bloc>
 <div class=emplois>
-{% for stage in stages %}
-    <a href="{{ path("specific_offer", {'idOffer': stage.id}) }}">
-    <div class=emploi>
+{% for offre in offres %}
+    <a href="{{ path("specific_offer", {'idOffer': offre.id}) }}">
+    <div class="emploi {{ (offre.type.name == "Stage") ? "stage" : "alternance"}}" style="display:none">
         <div class=head>
-            <p class=nom>{{ stage.organisation }}</p>
-            <p class=lib>{{ stage.title }}</p>
+            <p class=nom>{{ offre.organisation }}</p>
+            <p class=lib>{{ offre.title }}</p>
         </div>
         <div class=body>
-            <p class=date>{{ stage.duration }}</p>
-            <p class=adresse>{{ stage.location }}</p>
+            <p class=date>{{ offre.duration }}</p>
+            <p class=adresse>{{ offre.location }}</p>
         </div>
     </div>
     </a>    
@@ -81,4 +81,9 @@
 
 </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset("js/offer_search.js") }}"></script>
 {% endblock %}
