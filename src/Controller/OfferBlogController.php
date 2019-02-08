@@ -17,12 +17,10 @@ class OfferBlogController extends AbstractController
     public function index(ObjectManager $manager): Response
     {
         $data = $manager->getRepository(Offer::class);
-        $stages = $data->findAllByTypeName("Stage");
-        $alternances = $data->findAllByTypeName("Alternance");
+        $offres = $data->findAll();
         
         return $this->render('offer_blog/index.html.twig', [
-            "stages" => $stages,
-            "alternances" => $alternances
+            "offres" => $offres,
         ]);
     }
 
