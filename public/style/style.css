@@ -482,7 +482,7 @@ select:hover {
   padding-left: 30px;
   box-shadow: none;
   border-radius: 3px;
-  border-left: 4px solid #007bff;
+  border-left: 3px solid #007bff;
   background: whitesmoke;
 }
 .searchbar .input input:hover {
