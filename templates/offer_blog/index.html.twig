@@ -16,8 +16,8 @@
 <div class=bloc>
 <div class=searchbar>
     <span class=input><span class=glass></span><input type="text" placeholder="Recherche" id="input_search"></span>
-    <label class=checkbox><input type="checkbox" id="stage"><span class=checkmark></span>Stage</label>
-    <label class=checkbox><input type="checkbox" id="alternance"><span class=checkmark></span>Alternance</label>
+    <label class=checkbox><input type="checkbox" id="stage" onchange="alterCheckbox(this)"><span class=checkmark></span>Stage</label>
+    <label class=checkbox><input type="checkbox" id="alternance" onchange="alterCheckbox(this)"><span class=checkmark></span>Alternance</label>
 </div>
 </div>
 
@@ -27,7 +27,7 @@
     <a href="{{ path("specific_offer", {'idOffer': offre.id}) }}">
     <div class="emploi {{ (offre.type.name == "Stage") ? "stage" : "alternance"}}" style="display:none">
         <div class=head>
-            <p class=nom>{{ offre.organisation }}</p>
+            <p class=nom>{{ offre.type.name }} - {{ offre.organisation }}</p>
             <p class=lib>{{ offre.title }}</p>
         </div>
         <div class=body>
