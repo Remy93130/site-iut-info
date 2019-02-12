@@ -1,0 +1,13 @@
+#map{
+	z-index:1;
+	.centered-width(90%);
+	height:calc(100vh - 180px);
+	margin-top:40px;
+	border-radius:3px;
+	.shadow(0, 2px, 3px, 1px, rgba(0, 0, 0, 0.3));
+	&:hover{
+		.shadow(0, 2px, 3px, 1px, rgba(0, 0, 0, 0.5));
+	}
+	will-change:box-shadow;
+	.transition(0.2s, all);
+}

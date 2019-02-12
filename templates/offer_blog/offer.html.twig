@@ -1,14 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h2>Ceci est la page d'une offre spécifique ✅</h2>
-        {{ offer.title }} <br>
-        {{ offer.type.name }} <br>
-        {{ offer.organisation }} <br>
-        {{ offer.duration }} <br>
-        {{ offer.location }} <br>
-        {{ offer.description }} <br><br>
-        <a href="{{ path('offers') }}">Retour</a>
+	<div id="OFFER">
+		<div class="right">
+			<div class="organisation">{{ offer.organisation }}</div>
+        	<div class="duration">{{ offer.duration }}</div>
+        	<div class="location">{{ offer.location }}</div>
+		</div>
+		<div class="left">
+			<div class="title">{{ offer.type.name }} - {{ offer.title }} </div>
+			<div class="description">{{ offer.description }}</div>
+			<a class="retour" href="{{ path('offers') }}">Retour</a>
+		</div>
+    </div>
 
 {% endblock %}
