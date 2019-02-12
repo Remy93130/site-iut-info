@@ -473,6 +473,8 @@ select:hover {
 .searchbar {
   width: 100%;
   padding: 15px;
+  background-color: white;
+  margin-top: 50px;
 }
 .searchbar .input {
   margin-left: 20px;

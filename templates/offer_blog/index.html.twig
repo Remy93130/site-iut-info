@@ -2,19 +2,8 @@
 
 {% block body %}
 
-<div class=bloc>    
-<div class=pagehead>
-    <div class=name>Page 1 wallah</div>
-    {# <div class="url">
-        <a href="">Accueil</a>
-        <a href="">BlaBla</a>
-        <a href="">PTDR</a>
-    </div> #}
-</div>
-</div>
-<script type="text/javascript">alterCheckboxes();</script>
 <class=bloc>
-<div class=searchbar>
+<div class="searchbar">
     <span class=input><span class=glass></span><input type="text" placeholder="Recherche" id="input_search"></span>
     <label class=checkbox><input checked type="checkbox" id="stage" onchange="alterCheckbox(this)"><span class=checkmark></span>Stage</label>
     <label class=checkbox><input checked type="checkbox" id="alternance" onchange="alterCheckbox(this)"><span class=checkmark></span>Alternance</label>
@@ -25,7 +14,7 @@
 <div class=emplois>
 {% for offre in offres %}
     <a href="{{ path("specific_offer", {'idOffer': offre.id}) }}">
-    <div class="emploi {{ (offre.type.name == "Stage") ? "stage" : "alternance"}}" style="display:none">
+    <div class="emploi {{ (offre.type.name == "Stage") ? "stage" : "alternance"}}">
         <div class=head>
             <p class=nom>{{ offre.type.name }} - {{ offre.organisation }}</p>
             <p class=lib>{{ offre.title }}</p>
