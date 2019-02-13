@@ -1,5 +1,5 @@
 function initMap() {
-    var map = L.map('map').setView([48.852969, 2.349903], 9);
+    let map = L.map('map').setView([48.852969, 2.349903], 9);
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
         attribution: '© <a href="http://openstreetmap.fr">OpenStreetMap</a> contributors',
         minZoom: 1,
@@ -17,20 +17,19 @@ function getLocations(map) {
 }
 
 function putMarker(map, iuts) {
-    var markers = [];
+    let markers = [];
     for (var i = 0 in iuts) {
-        var lon = iuts[i]['lon'];
-        var lat = iuts[i]['lat'];
-        var content = iuts[i]['content'];
-        var mark = L.marker([lon, lat]).addTo(map);
+        let lon = iuts[i]['lon'];
+        let lat = iuts[i]['lat'];
+        let content = iuts[i]['content'];
+        let mark = L.marker([lon, lat]).addTo(map);
         markers.push(mark);
         mark.bindPopup(content);
     }
-    var group = new L.featureGroup(markers);
+    let group = new L.featureGroup(markers);
     map.fitBounds(group.getBounds());
 }
 
 window.onload = function(){
     initMap();
 };
-
