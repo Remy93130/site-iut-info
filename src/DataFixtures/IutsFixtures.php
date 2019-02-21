@@ -15,7 +15,25 @@ class IutsFixtures extends Fixture
             "Lens", "Amien", "Reims", "Metz", "St Die", "Nancy", "Strasbourg", "Orleans", "Belfort", "Dijon", "Limoges",
             "Lyon", "Clermont-Ferrand", "Le Puy", "Grenoble", "Valence", "Rodez", "Toulouse", "Aix en Provence",
             "Montpelier", "Nice", "Blagnac", "Arles", "Annecy", "Laval", "Maubeuge", "Fontainebleau", "Orsay",
-            "Velizy", "Paris 5", "Montreuil", "Villetaneuse", "Marne la Vallee"
+            "Velizy", "Descartes", "Montreuil", "Villetaneuse", "Marne la Vallee"
+        ];
+
+        $links = [
+            "https://www.iutbayonne.univ-pau.fr/vie-etudiante/index.html", "https://www.iut.u-bordeaux.fr/general/",
+            "http://www.iut-larochelle.fr/", "https://iutnantes.univ-nantes.fr/", "http://www.iutvannes.fr/",
+            "http://www.iut-lannion.fr/", "http://www.unicaen.fr/iutcaen/", "https://www-iut.univ-lehavre.fr/",
+            "http://www.iut.univ-littoral.fr/", "http://www.iut-a.univ-lille.fr/", "http://www.iut-lens.univ-artois.fr/",
+            "http://www.iut-amiens.fr/", "http://www.iut-rcc.fr/", "http://iut-metz.univ-lorraine.fr/",
+            "http://iutsd.univ-lorraine.fr/", "https://iut-charlemagne.univ-lorraine.fr/", "http://iutrs.unistra.fr/",
+            "http://www.univ-orleans.fr/iut-orleans/", "http://www.iut-bm.univ-fcomte.fr/", "http://iutdijon.u-bourgogne.fr/",
+            "https://www.iut.unilim.fr/", "https://iut.univ-lyon1.fr/", "https://www.iut-clermont.fr/",
+            "https://www.iut-clermont.fr/tag/lepuyenvelay/", "https://iut2.univ-grenoble-alpes.fr/",
+            "https://www.iut-valence.fr/", "https://www.iut-rodez.fr/", "http://iut.ups-tlse.fr/", "https://iut.univ-amu.fr/",
+            "https://iut-montpellier-sete.edu.umontpellier.fr/", "http://unice.fr/iut/presentation/accueil",
+            "https://www.iut-blagnac.fr/fr/", "https://iut.univ-amu.fr/sites/arles", "https://www.iut-acy.univ-smb.fr/",
+            "http://www.iut-laval.univ-lemans.fr/fr/index.html", "https://www.uphf.fr/IUT/", "http://www.iutsf.u-pec.fr/",
+            "http://www.iut-orsay.u-psud.fr/fr/index.html", "http://www.iut-velizy.uvsq.fr/", "http://www.iut.parisdescartes.fr/",
+            "http://www.iut.univ-paris8.fr/", "https://iutv.univ-paris13.fr/", "http://iut.u-pem.fr/"
         ];
         
         $lon = [
@@ -36,7 +54,8 @@ class IutsFixtures extends Fixture
         ];
         
         for ($i = 0; $i < count($locations); $i++) {
-            $content = "IUT de " . $locations[$i];
+            $html = "<a href='%s' target='_blank'>%s</a>";
+            $content = sprintf($html, $links[$i], "IUT de " . $locations[$i]);
             $iut = new IutLocation();
             $iut
                 ->setContent($content)
