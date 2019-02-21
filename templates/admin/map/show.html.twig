@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Point{% endblock %}
+
+{% block body %}
+    <div id="OFFER">
+        <div class="right">
+            {# Flemme de changer le nom des classes 😅 #}
+            <div class="organisation">{{ point.lat }}</div>
+            <div class="duration">{{ point.lon }}</div>
+            <div class="location">{{ point.content }}</div>
+        </div>
+    </div>
+    
+    <div class="modal alert" id="confirmDelete" style="display:none">
+        <div class="body">
+            <div class="head">
+                <h1>Voulez-vous vraiment supprimer le point ?</h1>
+                <div class="close" onclick="this.parentNode.parentNode.parentNode.style.display = 'none';">
+                    <div class="cross"></div>
+                </div>
+            </div>
+            
+            {{ include('admin/offer/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

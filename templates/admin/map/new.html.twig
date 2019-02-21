@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau point{% endblock %}
+
+{% block body %}
+    <h1>Créer nouveau point</h1>
+
+    {{ include('admin/map/_form.html.twig') }}
+
+    <a href="{{ path('map_index') }}">Retour à la liste</a>
+{% endblock %}
