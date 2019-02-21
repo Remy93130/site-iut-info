@@ -172,6 +172,8 @@ select:hover {
 }
 #NAVBAR .logo img {
   width: 100%;
+  position: relative;
+  top: -7px;
 }
 #NAVBAR .opennavbar {
   transform: translateX(100vw);
