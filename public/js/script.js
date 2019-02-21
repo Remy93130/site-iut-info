@@ -9,3 +9,8 @@ function closeNavbar(button, Navbar){
 	button.classList.remove("open");
 	button.onclick = function() { openNavbar(button, Navbar); }
 }
+
+function useModal(modalID){
+	var modal = document.getElementById(modalID);
+	modal.style.display = 'block';
+}

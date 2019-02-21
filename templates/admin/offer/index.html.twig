@@ -3,32 +3,31 @@
 {% block title %}Offer index{% endblock %}
 
 {% block body %}
-    <h1>Offer index</h1>
 
-    <table class="table">
+<div class="bloc padding">
+    <h1>Liste des offres</h1>
+
+    <table class="table admin">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Title</th>
                 <th>Organisation</th>
                 <th>Duration</th>
-                <th>Description</th>
+                <th class='description'>Description</th>
                 <th>Location</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for offer in offers %}
-            <tr>
-                <td>{{ offer.id }}</td>
+            <tr onClick="javascript:document.location.href='{{ path('offer_show', {'id': offer.id}) }}'">
                 <td>{{ offer.title }}</td>
                 <td>{{ offer.organisation }}</td>
                 <td>{{ offer.duration }}</td>
-                <td>{{ offer.description }}</td>
+                <td class="description">{{ offer.description }}</td>
                 <td>{{ offer.location }}</td>
                 <td>
-                    <a href="{{ path('offer_show', {'id': offer.id}) }}">show</a>
-                    <a href="{{ path('offer_edit', {'id': offer.id}) }}">edit</a>
+                    <a href="{{ path('offer_edit', {'id': offer.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
@@ -40,4 +39,5 @@
     </table>
 
     <a href="{{ path('offer_new') }}">Create new</a>
+</div>
 {% endblock %}
