@@ -15,7 +15,11 @@ class BaseController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('base/index.html.twig');
+        /*$data = $this->getDoctrine()->getRepository(Testimony::class)->findAll();
+        $tesimony = $data[mt_rand(0, count($data) - 1)]; */
+        return $this->render('base/index.html.twig', [
+            // "testimony" => $tesimony,
+        ]);
     }
 
     /**
@@ -50,5 +54,13 @@ class BaseController extends AbstractController
     public function partnership(): Response
     {
         return $this->render('base/partnership.html.twig');
+    }
+    
+    /**
+     * @Route("/formation", name="formation")
+     */
+    public function formation(): Response
+    {
+        return $this->render("base/formation.html.twig");
     }
 }
