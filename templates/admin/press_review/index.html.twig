@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PressReview index{% endblock %}
+
+{% block body %}
+    <h1>PressReview index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Lien</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for press_review in press_reviews %}
+            <tr>
+                <td>{{ press_review.id }}</td>
+                <td>{{ press_review.description }}</td>
+                <td>{{ press_review.lien }}</td>
+                <td>
+                    <a href="{{ path('press_review_show', {'id': press_review.id}) }}">show</a>
+                    <a href="{{ path('press_review_edit', {'id': press_review.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('press_review_new') }}">Create new</a>
+{% endblock %}

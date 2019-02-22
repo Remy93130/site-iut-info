@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="viewport" content="width=device-width">
         <meta name="description" content="Site officiel des IUTs Informatique">
         <title>{% block title %}Iut Informatique{% endblock %}</title>
         {% block stylesheets %}
@@ -26,8 +26,8 @@
                 <a href="{{ path('map') }}">
                     <div class=part><p>Carte des IUTs</p></div>
                 </a>
-                <a href="">
-                    <div class=part><p>Revue de presse</p></div>
+                <a href="{{ path("press_review_blog") }}">
+                    <div class=part><p>Revues de presse</p></div>
                 </a>
                 <a href="{{ path("usefull_link") }}">
                     <div class=part><p>Liens utiles</p></div>

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="example-wrapper">
+    <div id="BODY">
+        <div class="bloc">
+            <div class='texte-standard'>
+                <p class="head">Quelques revues de presse qui parlent de nous</p>
+                <p>
+                    {% for review in reviews %}
+                        {{ review.link|raw }} <br>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

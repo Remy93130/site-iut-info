@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PressReview{% endblock %}
+
+{% block body %}
+    <h1>PressReview</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ press_review.id }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ press_review.description }}</td>
+            </tr>
+            <tr>
+                <th>Lien</th>
+                <td>{{ press_review.lien }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('press_review_index') }}">back to list</a>
+
+    <a href="{{ path('press_review_edit', {'id': press_review.id}) }}">edit</a>
+
+    {{ include('admin/press_review/_delete_form.html.twig') }}
+{% endblock %}

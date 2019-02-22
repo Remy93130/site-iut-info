@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PressReview{% endblock %}
+
+{% block body %}
+    <h1>Edit PressReview</h1>
+
+    {{ include('admin/press_review/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('press_review_index') }}">back to list</a>
+
+    {{ include('admin/press_review/_delete_form.html.twig') }}
+{% endblock %}
