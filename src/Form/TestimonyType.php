@@ -25,6 +25,7 @@ class TestimonyType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Testimony::class,
+            'translation_domain' => 'form_testimony',
         ]);
     }
 }

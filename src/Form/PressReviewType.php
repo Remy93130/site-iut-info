@@ -21,6 +21,7 @@ class PressReviewType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => PressReview::class,
+            'translation_domain' => 'form_review',
         ]);
     }
 }

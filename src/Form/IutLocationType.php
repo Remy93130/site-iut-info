@@ -22,6 +22,7 @@ class IutLocationType extends AbstractType
     {
         $resolver->setDefaults([
             "data_class" => IutLocation::class,
+            'translation_domain' => 'form_iut',
         ]);
     }
 }
