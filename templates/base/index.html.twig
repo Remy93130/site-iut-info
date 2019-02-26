@@ -1,58 +1,65 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="example-wrapper">
     <div id="BODY">
-    	
-    <div class="bloc">
-    <div class="container-colonne">
-    	<div class="colonne">
-    		<div class="head">
-    			<p>Je suis étudiant</p>
-    		</div>
-    		<div class="body">
-    			<p><span class="bold">Rejoignez le dut parce que...</span> est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur</p>
-    		</div>
-    	</div>
-    	<div class="colonne">
-    		<div class="head">
-    			<p>Nous sommes une entreprise</p>
-    		</div>
-    		<div class="body">
-    			<p><span class="bold">Recrutez des infos parce que...</span> est simplement du faux texte employé dans la composition et la mise en page avant
-    			<br><br>
-    			Email pour postez des offres : <a href="mailto:webmaster@iut-informatique.fr">webmaster@iut-informatique.fr</a></p>
-    		</div>
-    	</div>
-    </div>
-    </div>
+        <div class="bloc">
+            <div class="container-colonne">
+                <div class="colonne">
+                    <div class="head">
+                        <p>Je suis étudiant</p>
+                    </div>
+                    <div class="body">
+                        <p>
+                            <span class="bold">Pourquoi choisir le DUT Informatique ? </span> Un DUT Informatique a pour objectif de formez les étudiants aux différents métier de l'informatique : Aussi bien dans le domaine du développement logiciel, web ou encore du réseau. En plus de ce bagage technique, les étudiants ont égalements de solide bases sur le fonctionnement des organisations ainsi qu'en communication.
+                        </p>
+                    </div>
+                </div>
+                <div class="colonne">
+                    <div class="head">
+                        <p>Nous sommes une entreprise</p>
+                    </div>
+                    <div class="body">
+                        <p>
+                            <span class="bold">Pourquoi recruter des étudiants en DUT Informatique ?</span> Les étudiants en DUT Informatique reçoivent une formation pluridisciplinaire qui leur permet aussi bien d'être opérationnel sur un poste technique que sur un poste proche du client où il faut analyser les besoins de celui-ci.
+                            <br><br>
+                            Email pour postez des offres : <a href="mailto:webmaster@iut-informatique.fr">webmaster@iut-informatique.fr</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class=bloc>
-    <div class=temoignage>
-    		<div class=head>Voir les témoignage</div>
-    		<p>En vrais sortir un témoignage au pif c'est pas une mauvaise idée mais comme ça sera en markdown et que ca risque d'être formaté bah c'est relou en plus on peux pas rajouter 50 truc a la navbar</p>
-    		{# <p class=auteur>Quentin Tarantino, 5 ans<br>Réalisateur</p> #}
-            <a href="{{ path("testimonies") }}" class="button">Découvrir les témoignages</a>
-    </div>
-    </div>
+        <div class=bloc>
+            <div class=temoignage>
+                    <div class=head>Voir les témoignage</div>
+                    <p>
+                        Quoi de mieux pour se renseigner sur la formation que de demander directement à quelqu'un qui la suivie ?<br>
+                        Ici vous pouvez lire différent témoignage d'ancien étudiant qui ont suivi ce cursus avec leur ressentit et ce qu'ils les ont surpris.
+                    </p>
+                    {# <p class=auteur>Quentin Tarantino, 5 ans<br>Réalisateur</p> #}
+                    <a href="{{ path("testimonies") }}" class="button">Découvrir les témoignages</a>
+            </div>
+        </div>
 
-    <div class=bloc>
-    <div class=texte-standard>
-    	<p class=head>Les débouchés</p>
-    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <div class=bloc>
+            <div class=texte-standard>
+                <p class=head>Les débouchés</p>
+                <p>
+                    Le but de la formations est de former des techniciens supérieurs polyvalent pouvant aussi bien analyser le besoin d'un client, assister le chef de projet que de concevoir une solution techniques pour répondre à ce besoin.<br>
+                    Ce qui permet donc à celui-ci d'exercer des métiers tel que <span class="bold">Développeur full stack, administrateur de base de données, développeur mobile, etc..</span>
+                </p>
 
-    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-    	<p class=head>Les poursuites d'études</p>
-    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    </div>
-
+                <p class=head>Les poursuites d'études</p>
+                <p>
+                    Bien que le DUT Informatique a pour objectif une insertion immédiate dans le monde professionnel, il est tout à fait possible de poursuivre ces études.<br>
+                    En effet, plusieurs voies s'ouvrent à un étudiant avec son diplome de DUT Informatique :
+                    <ul>
+                        <li>Suivre une licence professionnelle afin de se spécialiser.</li>
+                        <li>S'orienter vers une licence Informatique</li>
+                        <li>Poursuivre dans une école d'ingénieur</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
     </div>
 {% endblock %}
