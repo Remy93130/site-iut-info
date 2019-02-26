@@ -23,7 +23,7 @@
                 <td>{{ map.lat }}</td>
                 <td class="description">{{ map.content }}</td>
                 <td>
-                    <a href="{{ path('map_edit', {'id': map.id}) }}">Modifier</a>
+                    <a href="{{ path('map_edit', {'id': map.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
@@ -34,6 +34,6 @@
         </tbody>
     </table>
 
-    <a href="{{ path('map_new') }}">Créer nouveau</a>
+    <a href="{{ path('map_new') }}">Nouveau</a>
 </div>
 {% endblock %}

@@ -3,11 +3,26 @@
 {% block title %}Edit Testimony{% endblock %}
 
 {% block body %}
-    <h1>Edit Testimony</h1>
+<div class="bloc padding">
+    <h1>Editer le témoignage</h1>
 
-    {{ include('admin/testimony/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/testimony/_form.html.twig', {'button_label': 'Enregistrer'}) }}
 
-    <a href="{{ path('testimony_index') }}">back to list</a>
+    <a href="{{ path('testimony_index') }}">Retour</a>
+    <div class="button del" onclick="useModal('confirmDelete');">Supprimer</div>
+	
+	<div class="modal alert" id="confirmDelete" style="display:none">
+        <div class="body">
+            <div class="head">
+                <h1>Voulez-vous vraiment supprimer le témoignage ?</h1>
+                <div class="close" onclick="this.parentNode.parentNode.parentNode.style.display = 'none';">
+                    <div class="cross"></div>
+                </div>
+            </div>
+            
+            {{ include('admin/testimony/_delete_form.html.twig') }}
+        </div>
+    </div>
 
-    {{ include('admin/testimony/_delete_form.html.twig') }}
+</div>
 {% endblock %}

@@ -3,9 +3,11 @@
 {% block title %}New Testimony{% endblock %}
 
 {% block body %}
-    <h1>Create new Testimony</h1>
+<div class="padding bloc">
+    <h1>Nouveau témoignage</h1>
 
     {{ include('admin/testimony/_form.html.twig') }}
 
-    <a href="{{ path('testimony_index') }}">back to list</a>
+    <a href="{{ path('testimony_index') }}">Retour</a>
+</div>
 {% endblock %}

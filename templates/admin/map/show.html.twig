@@ -3,13 +3,15 @@
 {% block title %}Point{% endblock %}
 
 {% block body %}
-    <div id="OFFER">
-        <div class="right">
-            {# Flemme de changer le nom des classes 😅 #}
-            <div class="organisation">{{ point.lat }}</div>
-            <div class="duration">{{ point.lon }}</div>
-            <div class="location">{{ point.content }}</div>
+    <div id="TESTIMONY" class='bloc padding'>
+        <div class="fields">
+            <p><span class="heading">Latitude :</span>{{ point.lat }}</p>
+            <p><span class="heading">Longitude : </span>{{ point.lon }}</p>
+            <p><span class="heading">Contenu : </span>{{ point.content }}</p>
         </div>
+        <a class="retour" href="{{ path('map_index') }}">Retour</a>
+        <a class='edit' href="{{ path('map_edit', {'id': point.id}) }}">Editer</a>
+        <div class="del" onclick="useModal('confirmDelete');">Supprimer</div>
     </div>
     
     <div class="modal alert" id="confirmDelete" style="display:none">
@@ -21,7 +23,7 @@
                 </div>
             </div>
             
-            {{ include('admin/offer/_delete_form.html.twig') }}
+            {{ include('admin/map/_delete_form.html.twig') }}
         </div>
     </div>
 {% endblock %}
