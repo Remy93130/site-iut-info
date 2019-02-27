@@ -3,11 +3,25 @@
 {% block title %}Edit PressReview{% endblock %}
 
 {% block body %}
+<div class="bloc padding">
     <h1>Edit PressReview</h1>
 
-    {{ include('admin/press_review/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/press_review/_form.html.twig', {'button_label': 'Enregistrer'}) }}
 
-    <a href="{{ path('press_review_index') }}">back to list</a>
+    <a href="{{ path('press_review_index') }}">Retour</a>
+    <div class="button del" onclick="useModal('confirmDelete');">Supprimer</div>
 
-    {{ include('admin/press_review/_delete_form.html.twig') }}
+	<div class="modal alert" id="confirmDelete" style="display:none">
+        <div class="body">
+            <div class="head">
+                <h1>Voulez-vous vraiment supprimer la revue ?</h1>
+                <div class="close" onclick="this.parentNode.parentNode.parentNode.style.display = 'none';">
+                    <div class="cross"></div>
+                </div>
+            </div>
+            
+            {{ include('admin/press_review/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
 {% endblock %}

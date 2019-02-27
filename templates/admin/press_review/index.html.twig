@@ -3,12 +3,14 @@
 {% block title %}PressReview index{% endblock %}
 
 {% block body %}
-    <h1>PressReview index</h1>
+<div class="bloc padding">
+    <h1>Revues de presse</h1>
+    
+    <a class="retour" href="{{ path('admin') }}">Retour à l'index</a>
 
-    <table class="table">
+    <table class="table admin">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Description</th>
                 <th>Lien</th>
                 <th>actions</th>
@@ -16,13 +18,11 @@
         </thead>
         <tbody>
         {% for press_review in press_reviews %}
-            <tr>
-                <td>{{ press_review.id }}</td>
+            <tr onClick="javascript:document.location.href='{{ path('press_review_show', {'id': press_review.id}) }}'">
                 <td>{{ press_review.description }}</td>
                 <td>{{ press_review.lien }}</td>
                 <td>
-                    <a href="{{ path('press_review_show', {'id': press_review.id}) }}">show</a>
-                    <a href="{{ path('press_review_edit', {'id': press_review.id}) }}">edit</a>
+                    <a href="{{ path('press_review_edit', {'id': press_review.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('press_review_new') }}">Create new</a>
+    <a href="{{ path('press_review_new') }}">Nouveau</a>
+</div>
+
 {% endblock %}

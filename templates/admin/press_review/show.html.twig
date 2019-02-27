@@ -3,28 +3,29 @@
 {% block title %}PressReview{% endblock %}
 
 {% block body %}
+<div class="bloc padding" id="TESTIMONY">
     <h1>PressReview</h1>
+    
+    <div class="fields">
+        <p><span class="heading">Description : </span>{{ press_review.description }}</p>
+        <p><span class="heading">Lien : </span>{{ press_review.lien }}</p>
+    </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ press_review.id }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ press_review.description }}</td>
-            </tr>
-            <tr>
-                <th>Lien</th>
-                <td>{{ press_review.lien }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <a class="retour" href="{{ path('press_review_index') }}">Retour</a>
+    <a class="edit" href="{{ path('press_review_edit', {'id': press_review.id}) }}">Editer</a>
+    <div class="del" onclick="useModal('confirmDelete');">Supprimer</div>
 
-    <a href="{{ path('press_review_index') }}">back to list</a>
-
-    <a href="{{ path('press_review_edit', {'id': press_review.id}) }}">edit</a>
-
-    {{ include('admin/press_review/_delete_form.html.twig') }}
+    <div class="modal alert" id="confirmDelete" style="display:none">
+        <div class="body">
+            <div class="head">
+                <h1>Voulez-vous vraiment supprimer la revue ?</h1>
+                <div class="close" onclick="this.parentNode.parentNode.parentNode.style.display = 'none';">
+                    <div class="cross"></div>
+                </div>
+            </div>
+            
+            {{ include('admin/press_review/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
 {% endblock %}

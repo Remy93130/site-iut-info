@@ -3,9 +3,11 @@
 {% block title %}New PressReview{% endblock %}
 
 {% block body %}
-    <h1>Create new PressReview</h1>
+<div class="bloc padding">
+    <h1>Nouvelle revue de presse</h1>
 
     {{ include('admin/press_review/_form.html.twig') }}
 
-    <a href="{{ path('press_review_index') }}">back to list</a>
+    <a href="{{ path('press_review_index') }}">Retour à la liste</a>
+</div>
 {% endblock %}
