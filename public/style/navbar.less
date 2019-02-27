@@ -1,6 +1,41 @@
 @import "style.less";
 
 #NAVBAR {
+	#UPARROW{
+		.transition(transform, 0.2s);
+		position:fixed;
+		bottom:20px;
+		right:20px;
+		width:40px;
+		height:40px;
+		border-radius:20px;
+		background-color:@bootblue;
+		cursor:pointer;
+		&:hover{
+			background: @bootbluedark;
+			&::after{
+				transform:rotate(45deg) translate(-3px, -3px);
+			}
+		}
+		.button-shadow;
+		&::after{
+			.transition(transform, 0.2s);
+			content:"";
+			display:block;
+			top:13px;
+			left:11px;
+			position:relative;
+			width:16px;
+			height:16px;
+			border-left:3px solid white;
+			border-top:3px solid white;
+			transform:rotate(45deg);
+		}
+		&.hidden{
+			transform:translateX(200px);
+		}
+	}
+
 	z-index:@navbarzindex;
 	height:@navbarheight;
 	width:100%;
