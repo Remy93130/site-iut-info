@@ -1299,3 +1299,19 @@ form select:nth-child(n + 1) {
   -webkit-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.4);
   box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.4);
 }
+.texte-standard {
+  max-width: 700px;
+  width: 100%;
+  padding: 30px;
+}
+.texte-standard .head {
+  font-size: 25px;
+  font-family: 'BOLD';
+}
+.texte-standard span.tab {
+  margin-right: 40px;
+}
+.texte-standard span.bold {
+  font-family: "BOLD";
+  margin-bottom: 10px;
+}
