@@ -351,7 +351,7 @@ select:hover {
   padding: 10px 20px 10px 20px;
 }
 .container-colonne .colonne .head {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 20px;
 }
 .container-colonne .colonne .head p {
@@ -398,7 +398,7 @@ select:hover {
 .temoignage .head {
   font-family: "bold";
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 25px;
 }
 .temoignage .auteur {
   font-style: italic;
@@ -429,19 +429,11 @@ select:hover {
   display: table;
   clear: both;
 }
-.texte-standard {
-  width: 100%;
-  padding: 30px;
-}
-.texte-standard .head {
-  font-family: bold;
-  font-size: 25px;
-}
 @media screen and (max-width: 960px) {
   .container-colonne .colonne {
     width: 100%;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 @media screen and (max-width: 600px) {
@@ -472,7 +464,7 @@ select:hover {
   .temoignage .right .head {
     font-family: "bold";
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 .searchbar {
@@ -992,7 +984,7 @@ span.bold {
   float: left;
   width: 400px;
   font-family: "bold";
-  font-size: 30px;
+  font-size: 35px;
 }
 .pagehead .url {
   padding-top: 9px;
