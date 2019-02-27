@@ -1304,6 +1304,28 @@ form select:nth-child(n + 1) {
   width: 100%;
   padding: 30px;
 }
+.texte-standard h1 {
+  font-family: 'BOLD';
+  font-size: 25px;
+  margin: 30px 0;
+}
+.texte-standard p {
+  margin: 0 0 0 20px;
+  text-align: justify;
+}
+.texte-standard p.criteres {
+  margin-top: 4px;
+  padding-left: 10px;
+  font-style: italic;
+}
+.texte-standard a {
+  color: white;
+  background-color: #007bff;
+  padding: 0 3px;
+}
+.texte-standard a:hover {
+  background: #003edb;
+}
 .texte-standard .head {
   font-size: 25px;
   font-family: 'BOLD';
