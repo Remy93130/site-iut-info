@@ -65,7 +65,7 @@ class TestimonyController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('testimony_edit', ['id' => $testimony->getId()]);
+            return $this->redirectToRoute('testimony_index');
         }
 
         return $this->render('admin/testimony/edit.html.twig', [
@@ -85,6 +85,6 @@ class TestimonyController extends AbstractController
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin/testimony_index');
+        return $this->redirectToRoute('testimony_index');
     }
 }

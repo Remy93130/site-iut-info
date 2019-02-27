@@ -65,7 +65,7 @@ class OfferController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('offer_edit', ['id' => $offer->getId()]);
+            return $this->redirectToRoute('offer_index');
         }
 
         return $this->render('admin/offer/edit.html.twig', [

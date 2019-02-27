@@ -7,11 +7,14 @@
             <div class='texte-standard'>
                 <p class="head">Quelques revues de presse qui parlent de nous</p>
                 <p>
-                    {% for review in reviews %}
-                        {{ review.link|raw }} <br>
-                    {% endfor %}
+                    <ul>
+                        {% for review in reviews %}
+                            <li style="margin-bottom:5px">{{ review.link|raw }}</li>
+                        {% endfor %}
+                    </ul>
                 </p>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
