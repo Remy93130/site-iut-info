@@ -6,6 +6,7 @@ use App\Entity\Testimony;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class TestimonyType extends AbstractType
 {
@@ -17,7 +18,9 @@ class TestimonyType extends AbstractType
             ->add('age')
             ->add('state')
             ->add('date')
-            ->add('content')
+            ->add('content', TextareaType::class, [
+                'attr' => ['rows' => 15]
+            ])
         ;
     }
 

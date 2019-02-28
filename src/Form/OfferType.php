@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class OfferType extends AbstractType
 {
@@ -17,7 +18,9 @@ class OfferType extends AbstractType
             ->add('title')
             ->add('organisation')
             ->add('duration')
-            ->add('description')
+            ->add('description', TextareaType::class, [
+                'attr' => ["row" => 20]
+            ])
             ->add('location')
             ->add('type', EntityType::class, [
                 'class' => Type::class,

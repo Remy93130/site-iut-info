@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Offer index{% endblock %}
-
 {% block body %}
 
 <div class="bloc padding">
@@ -13,10 +11,10 @@
         <thead>
             <tr>
                 <th>Titre</th>
-                <th>Organisation</th>
-                <th>Duration</th>
+                <th>Entreprise</th>
+                <th>Durée</th>
                 <th class='description'>Description</th>
-                <th>Location</th>
+                <th>Lieu</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,15 +24,15 @@
                 <td>{{ offer.title }}</td>
                 <td>{{ offer.organisation }}</td>
                 <td>{{ offer.duration }}</td>
-                <td class="description">{{ offer.description }}</td>
+                <td class="description">{{ offer.description|slice(0, 100) }}...</td>
                 <td>{{ offer.location }}</td>
                 <td>
-                    <a href="{{ path('offer_edit', {'id': offer.id}) }}">Edit</a>
+                    <a href="{{ path('offer_edit', {'id': offer.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Aucune entrées</td>
             </tr>
         {% endfor %}
         </tbody>

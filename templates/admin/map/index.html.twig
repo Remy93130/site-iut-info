@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Map index{% endblock %}
-
 {% block body %}
 
 <div class="bloc padding">
@@ -25,7 +23,7 @@
                 <td>{{ map.lat }}</td>
                 <td class="description">{{ map.content }}</td>
                 <td>
-                    <a href="{{ path('map_edit', {'id': map.id}) }}">Edit</a>
+                    <a href="{{ path('map_edit', {'id': map.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}

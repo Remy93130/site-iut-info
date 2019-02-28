@@ -22,12 +22,12 @@
                 <td>{{ press_review.description }}</td>
                 <td>{{ press_review.lien }}</td>
                 <td>
-                    <a href="{{ path('press_review_edit', {'id': press_review.id}) }}">Edit</a>
+                    <a href="{{ path('press_review_edit', {'id': press_review.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Aucune entrées</td>
             </tr>
         {% endfor %}
         </tbody>
