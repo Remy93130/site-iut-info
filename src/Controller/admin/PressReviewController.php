@@ -69,9 +69,7 @@ class PressReviewController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('press_review_index', [
-                'id' => $pressReview->getId(),
-            ]);
+            return $this->redirectToRoute('press_review_index');
         }
 
         return $this->render('admin/press_review/edit.html.twig', [

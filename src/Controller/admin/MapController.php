@@ -73,7 +73,7 @@ class MapController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
             
-            return $this->redirectToRoute("map_edit", ["id" => $point->getId()]);
+            return $this->redirectToRoute("map_index");
         }
         
         return $this->render("admin/map/edit.html.twig", [
