@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h2>Ceci est la page d'une offre spécifique ✅</h2>
-        {{ testimony.firstName }} <br>
-        {{ testimony.name }} <br>
-        {{ testimony.age }} <br>
-        {{ testimony.state }} <br>
-        {{ testimony.date|date("m/d/Y") }} <br>
-        {{ testimony.content|raw }} <br><br>
-        <a href="{{ path('testimonies') }}">Retour</a>
+<div class="bloc padding">
 
+    <h2>{{ testimony.firstName }} {{ testimony.name }}, {{ testimony.age }} ans</h2>
+    <p class="date">Fait le : {{ testimony.date|date("m/d/Y") }}</p>
+    <div class="texte-standard">
+   		{{ testimony.content|raw }}
+    </div>
+    <a href="{{ path('testimonies') }}">Retour</a>
+
+</div>
 {% endblock %}
